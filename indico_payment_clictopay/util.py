@@ -5,16 +5,17 @@ def get_api_base_url():
     environment = current_app.config['payment_clictopay']['environment']
     return 'https://test.clictopay.com/payment/rest/' if environment == 'test' else 'https://ipay.clictopay.com/payment/rest/'
 
-def create_clictopay_transaction(order_id, amount, return_url, fail_url):
+def create_clictopay_transaction(order_id, amount, return_url, fail_url, language='en'):
     api_base_url = get_api_base_url()
     payload = {
         'userName': current_app.config['payment_clictopay']['merchant_user'],
         'password': current_app.config['payment_clictopay']['merchant_password'],
         'orderNumber': order_id,
-        'amount': int(amount * 100),  # Convert to minor units
-        'currency': 788,  # TND (ISO 4217)
+        'amount': int(amount * 100),
+        'currency': 788,
         'returnUrl': return_url,
         'failUrl': fail_url,
+        'language': language,  # Set the language
     }
     response = requests.post(f"{api_base_url}register.do", data=payload)
     response_data = response.json()
@@ -22,6 +23,7 @@ def create_clictopay_transaction(order_id, amount, return_url, fail_url):
         return response_data['formUrl']
     else:
         raise Exception(f"Failed to create payment: {response_data.get('errorMessage')}")
+
 
     
     # Sending the payment request
