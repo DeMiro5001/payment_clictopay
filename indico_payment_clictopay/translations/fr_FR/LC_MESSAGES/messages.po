@@ -1,0 +1,14 @@
+msgid "Your payment has been successfully processed."
+msgstr "Votre paiement a été traité avec succès."
+
+msgid "Your payment could not be processed. Please try again."
+msgstr "Votre paiement n'a pas pu être traité. Veuillez réessayer."
+
+msgid "Transaction ID"
+msgstr "ID de transaction"
+
+msgid "Amount"
+msgstr "Montant"
+
+msgid "Status"
+msgstr "Statut"
