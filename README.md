@@ -15,4 +15,4 @@ Based on https://mczen-technologies.github.io/clictopay-api and https://cdn.jsde
 
 ### 1.0
 
-- Initial release for Indico 3.0
+- Initial release for Indico 3.x
