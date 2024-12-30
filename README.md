@@ -1,6 +1,6 @@
 # Clictopay Plugin
 
-This plugin provides a [clictopay](https://monetiquetunisie.com) option for Indico's payment module.
+This plugin provides a [clictopay](https://monetiquetunisie.com) option for [Indico](https://github.com/indico/indico)'s payment module.
 
 When used, the user will be sent to clictopay to make the payment, and afterwards
 they are automatically sent back to Indico.
