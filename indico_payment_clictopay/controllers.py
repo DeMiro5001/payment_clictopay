@@ -13,7 +13,7 @@ class ClicToPayPayment(PaymentController):
         fail_url = url_for('payment_clictopay.payment_fail', _external=True)
 
         # Call the utility function to create a payment request
-        form_url = create_clictopay_transaction(order_id, self.registration.price, return_url, fail_url)
+        form_url = create_clictopay_transaction( order_id, self.registration.price, return_url, fail_url, language='fr')
 
         # Render the payment form template
         return render_template('payment_clictopay:event_payment_form.html', form_url=form_url, order_id=order_id)
