@@ -1,0 +1,22 @@
+ 
+{% extends 'events/payment/base.html' %}
+
+{% block payment_title %}
+    Pay with ClicToPay
+{% endblock %}
+
+{% block payment_content %}
+    <p>You will be redirected to the ClicToPay payment platform to complete your transaction.</p>
+    <form id="clictopay-form" method="POST" action="{{ form_url }}">
+        <!-- Include any required hidden fields -->
+        <input type="hidden" name="orderId" value="{{ order_id }}">
+        <noscript>
+            <p>Please click the button below to proceed with your payment.</p>
+            <button type="submit" class="btn btn-primary">Pay Now</button>
+        </noscript>
+    </form>
+    <script>
+        // Automatically submit the form for redirection
+        document.getElementById('clictopay-form').submit();
+    </script>
+{% endblock %}
