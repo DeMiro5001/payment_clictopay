@@ -20,12 +20,12 @@ class ClicToPayPlugin(IndicoPlugin):
     """ClicToPay Payment Plugin"""
 
     configurable = True
-    settings_proxy = PaymentEventSettingsProxy('payment_clictopay', {
-        'merchant_user': '',
-        'merchant_password': '',
-        'api_base_url': 'https://test.clictopay.com/payment/rest',  # Default to test environment
-        'api_environment': 'test',  # Default setting
-    })
+settings_proxy = PaymentEventSettingsProxy('payment_clictopay', {
+    'merchant_user': '',
+    'merchant_password': '',
+    'api_base_url': 'https://test.clictopay.com/payment/rest/',  # Default to test
+    'environment': 'test',  # Add a new setting for environment
+})
 
     def init(self):
         super().init()
