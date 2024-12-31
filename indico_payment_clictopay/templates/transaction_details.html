@@ -1,0 +1,13 @@
+ 
+{% extends 'events/payment/transaction_details.html' %}
+
+{% block transaction_extra %}
+    <dl>
+        <dt>Transaction ID</dt>
+        <dd>{{ transaction.order_id }}</dd>
+        <dt>Status</dt>
+        <dd>{{ transaction.status }}</dd>
+        <dt>Amount</dt>
+        <dd>{{ transaction.amount | currency(transaction.currency) }}</dd>
+    </dl>
+{% endblock %}
